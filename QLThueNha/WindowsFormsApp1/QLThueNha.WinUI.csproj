@@ -81,6 +81,12 @@
     <Compile Include="DanhMuc\LoaiNha.Designer.cs">
       <DependentUpon>LoaiNha.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\FrmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\FrmDoiMatKhau.Designer.cs">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\LoaiNha.resx">
       <DependentUpon>LoaiNha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\FrmDoiMatKhau.resx">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

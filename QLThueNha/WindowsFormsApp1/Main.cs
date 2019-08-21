@@ -73,5 +73,11 @@ namespace WindowsFormsApp1
             Login frm = new Login();
             frm.ShowDialog();
         }
+
+        private void mnuDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            FrmDoiMatKhau frm = new FrmDoiMatKhau();
+            frm.ShowDialog();
+        }
     }
 }
