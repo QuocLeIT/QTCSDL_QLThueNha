@@ -43,8 +43,8 @@
             this.hệThôgnsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDN = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDX = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,28 +156,28 @@
             // mnuDN
             // 
             this.mnuDN.Name = "mnuDN";
-            this.mnuDN.Size = new System.Drawing.Size(180, 22);
+            this.mnuDN.Size = new System.Drawing.Size(145, 22);
             this.mnuDN.Text = "Đăng nhập";
             this.mnuDN.Click += new System.EventHandler(this.mnuDN_Click);
             // 
             // mnuDX
             // 
             this.mnuDX.Name = "mnuDX";
-            this.mnuDX.Size = new System.Drawing.Size(180, 22);
+            this.mnuDX.Size = new System.Drawing.Size(145, 22);
             this.mnuDX.Text = "Đăng xuất";
-            // 
-            // mnuThoat
-            // 
-            this.mnuThoat.Name = "mnuThoat";
-            this.mnuThoat.Size = new System.Drawing.Size(180, 22);
-            this.mnuThoat.Text = "Thoát";
             // 
             // mnuDoiMatKhau
             // 
             this.mnuDoiMatKhau.Name = "mnuDoiMatKhau";
-            this.mnuDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.mnuDoiMatKhau.Size = new System.Drawing.Size(145, 22);
             this.mnuDoiMatKhau.Text = "Đổi mật khẩu";
             this.mnuDoiMatKhau.Click += new System.EventHandler(this.mnuDoiMatKhau_Click);
+            // 
+            // mnuThoat
+            // 
+            this.mnuThoat.Name = "mnuThoat";
+            this.mnuThoat.Size = new System.Drawing.Size(145, 22);
+            this.mnuThoat.Text = "Thoát";
             // 
             // Main
             // 
@@ -187,6 +187,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
