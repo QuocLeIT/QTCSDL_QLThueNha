@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLThueNha.DanhMuc;
 using QLThueNha.HeThong;
+using QLThueNha.Module;
 
 namespace WindowsFormsApp1
 {
@@ -49,11 +50,7 @@ namespace WindowsFormsApp1
             frm.ShowDialog();
         }
 
-        private void mnuNhaChoThue_Click(object sender, EventArgs e)
-        {
-            FrmNhaChoThue frm = new FrmNhaChoThue();
-            frm.ShowDialog();
-        }
+     
 
         private void mnuDatLichXemNha_Click(object sender, EventArgs e)
         {
@@ -78,6 +75,45 @@ namespace WindowsFormsApp1
         {
             FrmDoiMatKhau frm = new FrmDoiMatKhau();
             frm.ShowDialog();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            BlockMenu(false);
+
+            Login frm = new Login();
+            frm.ShowDialog();
+
+            if (DataAccount._idUser > 0) {
+                BlockMenu(true);
+            }
+        }
+
+        private void BlockMenu(bool isLogin) {
+            mnuDanhMuc.Enabled = isLogin;
+            mnuDatLichXemNha.Enabled = isLogin;
+            mnuHopDong.Enabled = isLogin;
+            mnuDX.Enabled = isLogin;
+            mnuDoiMatKhau.Enabled = isLogin;
+
+            mnuDN.Enabled = !isLogin;
+        }
+
+        private void mnuNhaChoThue_Click_1(object sender, EventArgs e)
+        {
+            FrmNhaChoThue frm = new FrmNhaChoThue();
+            frm.ShowDialog();
+        }
+
+        private void mnuDX_Click(object sender, EventArgs e)
+        {
+            DataAccount.ResetDataAccount();
+            BlockMenu(false);
+        }
+
+        private void mnuThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
