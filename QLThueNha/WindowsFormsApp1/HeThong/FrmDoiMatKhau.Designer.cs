@@ -30,9 +30,9 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassNew = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassOld = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -42,26 +42,28 @@
             this.button2.Location = new System.Drawing.Point(235, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(116, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Thay đổi";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // txtPassNew
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(249, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtPassNew.Location = new System.Drawing.Point(99, 93);
+            this.txtPassNew.Name = "txtPassNew";
+            this.txtPassNew.PasswordChar = '*';
+            this.txtPassNew.Size = new System.Drawing.Size(249, 20);
+            this.txtPassNew.TabIndex = 1;
             // 
             // label2
             // 
@@ -72,12 +74,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Mật khẩu mới";
             // 
-            // textBox1
+            // txtPassOld
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtPassOld.Location = new System.Drawing.Point(99, 67);
+            this.txtPassOld.Name = "txtPassOld";
+            this.txtPassOld.PasswordChar = '*';
+            this.txtPassOld.Size = new System.Drawing.Size(249, 20);
+            this.txtPassOld.TabIndex = 0;
             // 
             // label3
             // 
@@ -106,12 +109,15 @@
             this.ClientSize = new System.Drawing.Size(368, 165);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPassNew);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassOld);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "FrmDoiMatKhau";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,9 +128,9 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassNew;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassOld;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
     }

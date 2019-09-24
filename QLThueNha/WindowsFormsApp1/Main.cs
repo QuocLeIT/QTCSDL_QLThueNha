@@ -50,13 +50,10 @@ namespace WindowsFormsApp1
             frm.ShowDialog();
         }
 
-     
-
         private void mnuDatLichXemNha_Click(object sender, EventArgs e)
         {
             FrmXemNha frm = new FrmXemNha();
             frm.ShowDialog();
-
         }
 
         private void mnuHopDong_Click(object sender, EventArgs e)
@@ -69,12 +66,22 @@ namespace WindowsFormsApp1
         {
             Login frm = new Login();
             frm.ShowDialog();
+
+            if (DataAccount._idUser < 1)
+                BlockMenu(false);
+            else
+                BlockMenu(true);
         }
 
         private void mnuDoiMatKhau_Click(object sender, EventArgs e)
         {
             FrmDoiMatKhau frm = new FrmDoiMatKhau();
             frm.ShowDialog();
+
+            if (DataAccount._idUser < 1) {
+                mnuDX_Click(sender, e);
+                mnuDN_Click(sender, e);
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)
