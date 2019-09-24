@@ -55,8 +55,7 @@ CREATE TABLE NhaChoThue(
    IDChiNhanh int
    PRIMARY KEY(ID)
 );
-update NhaChoThue set GiaThue = @giathue where Ma = @manha
-select Ma, DiaChi, KhuVuc, SoPhong, GiaThue from NhaChoThue
+
 
 --CREATE TABLE ChuNha(
 --   ID bigint IDENTITY(1,1),
@@ -84,7 +83,9 @@ CREATE TABLE NhanVien(
    GioiTinh bit, --1: nam, 0: nu
    NgaySinh datetime,
    Luong money,
-   IDChiNhanh int
+   IDChiNhanh int,
+   --Username nvarchar(20),
+   --Pass nvarchar(20),
    PRIMARY KEY(ID)
 );
 
@@ -147,4 +148,7 @@ ALTER TABLE NhaChoThue ADD CONSTRAINT fk_NhanVien_KhachHang
 FOREIGN KEY(IDChuNha) REFERENCES KhachHang(ID);
 
 Alter table NhanVien Add IDChucVu int default 2; -- 1: admin, 2: nhanvien
---insert into NhanVien(Ma, Ten, Username, Pass, IDChucVu)
+
+--23-09-2019
+Alter table NhanVien Add Username nvarchar(20);
+Alter table NhanVien Add Pass nvarchar(20);
