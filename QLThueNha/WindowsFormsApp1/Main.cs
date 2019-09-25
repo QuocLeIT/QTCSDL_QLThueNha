@@ -96,6 +96,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        //---------------------------
         private void BlockAll(bool isLock) {
             mnuChiNhanh.Enabled = isLock;
             mnuLoaiNhaChoTHue.Enabled = isLock;
@@ -137,6 +138,7 @@ namespace WindowsFormsApp1
 
             mnuDN.Enabled = !isLogin;
         }
+        //---------------------------
 
         private void mnuNhaChoThue_Click_1(object sender, EventArgs e)
         {

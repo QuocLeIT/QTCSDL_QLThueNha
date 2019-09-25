@@ -17,7 +17,7 @@ namespace QLThueNha.DanhMuc
         DataProvider dp = new DataProvider();
         DataTable ta_Data = new DataTable();
 
-
+        //2019-09-25
         public FrmNhanVien()
         {
             InitializeComponent();
