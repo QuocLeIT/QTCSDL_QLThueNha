@@ -96,8 +96,40 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void BlockAll(bool isLock) {
+            mnuChiNhanh.Enabled = isLock;
+            mnuLoaiNhaChoTHue.Enabled = isLock;
+            mnuNhanVien.Enabled = isLock;
+
+            mnuKhachHang.Enabled = isLock;
+
+            mnuDatLichXemNha.Enabled = isLock;
+            mnuHopDong.Enabled = isLock;
+            mnuDX.Enabled = isLock;
+            mnuDoiMatKhau.Enabled = isLock;
+
+            mnuDN.Enabled = !isLock;
+        }
+
         private void BlockMenu(bool isLogin) {
-            mnuDanhMuc.Enabled = isLogin;
+            BlockAll(false);
+
+            if (!isLogin) return;
+
+            //admin
+            if (DataAccount._idChucVu == 1) {
+                mnuChiNhanh.Enabled = isLogin;
+                mnuLoaiNhaChoTHue.Enabled = isLogin;
+                mnuNhanVien.Enabled = isLogin;
+            }
+
+            //nhan vien
+            if (DataAccount._idChucVu == 1 || DataAccount._idChucVu == 2)
+            {
+                mnuKhachHang.Enabled = isLogin;
+            }
+                
+            //khachhang
             mnuDatLichXemNha.Enabled = isLogin;
             mnuHopDong.Enabled = isLogin;
             mnuDX.Enabled = isLogin;
