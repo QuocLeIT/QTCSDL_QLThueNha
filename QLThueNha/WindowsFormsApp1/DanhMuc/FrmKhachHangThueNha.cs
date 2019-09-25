@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLThueNha.Module;
+using Provider;
 
 namespace QLThueNha.DanhMuc
 {
@@ -15,6 +17,18 @@ namespace QLThueNha.DanhMuc
         public FrmKhachHangThueNha()
         {
             InitializeComponent();
+        }
+
+        private void FrmKhachHangThueNha_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

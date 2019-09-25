@@ -49,6 +49,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FAX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -82,14 +86,14 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 166);
+            this.groupBox1.Size = new System.Drawing.Size(379, 186);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(255, 123);
+            this.button4.Location = new System.Drawing.Point(255, 155);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 2;
@@ -98,7 +102,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(174, 123);
+            this.button3.Location = new System.Drawing.Point(174, 155);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 2;
@@ -107,7 +111,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(93, 123);
+            this.button2.Location = new System.Drawing.Point(93, 155);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -116,7 +120,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 123);
+            this.button1.Location = new System.Drawing.Point(12, 155);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -191,9 +195,9 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 222);
+            this.groupBox2.Location = new System.Drawing.Point(0, 242);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 228);
+            this.groupBox2.Size = new System.Drawing.Size(379, 208);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -210,7 +214,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(373, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(373, 189);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -239,6 +243,23 @@
             // 
             this.FAX.HeaderText = "Địa chỉ";
             this.FAX.Name = "FAX";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(85, 123);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(267, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 126);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Chi nhánh";
             // 
             // FrmChuNha
             // 
@@ -281,5 +302,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn FAX;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label9;
     }
 }
