@@ -16,7 +16,6 @@ namespace QLThueNha.DanhMuc
         DataProvider dp = new DataProvider();
         DataTable ta_Data = new DataTable();
       
-
         public LoaiNha()
         {
             InitializeComponent();
@@ -39,13 +38,8 @@ namespace QLThueNha.DanhMuc
         {
             try
             {
-                //if (dgvData.Rows.Count < 2 || dgvData.CurrentCellAddress.Y < 0) return;
-                if ( dgvData.CurrentRow.Index == dgvData.Rows.Count - 1)
-                {
-                    ClearText();
-                    return;
-                }
-
+                if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
+               
                 int i = dgvData.CurrentRow.Index;
 
                 txtMa.Text = dgvData.Rows[i].Cells["ColMa"].Value.ToString();
@@ -99,8 +93,8 @@ namespace QLThueNha.DanhMuc
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (dgvData.Rows.Count < 2 || dgvData.CurrentCellAddress.Y < 0) return;
-            if (dgvData.CurrentRow.Index == dgvData.Rows.Count - 1) return;
+            if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
+            
             if (ThieuDuLieu()) return;
 
             try
@@ -122,8 +116,7 @@ namespace QLThueNha.DanhMuc
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvData.Rows.Count < 2 || dgvData.CurrentCellAddress.Y < 0) return;
-            if (dgvData.CurrentRow.Index == dgvData.Rows.Count - 1) return;
+            if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
 
             if (MessageBox.Show("Xác nhận xóa?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No) return;
 
@@ -144,6 +137,10 @@ namespace QLThueNha.DanhMuc
             }
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            txtMa.Focus();
+        }
     }
 }

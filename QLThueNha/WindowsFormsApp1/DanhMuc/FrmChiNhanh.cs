@@ -100,8 +100,7 @@ namespace QLThueNha.DanhMuc
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (dgvData.Rows.Count < 2 || dgvData.CurrentCellAddress.Y < 0) return;
-            if (dgvData.CurrentRow.Index == dgvData.Rows.Count - 1) return;
+            if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
             if (ThieuDuLieu()) return;
 
             try
@@ -117,8 +116,7 @@ namespace QLThueNha.DanhMuc
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvData.Rows.Count < 2 || dgvData.CurrentCellAddress.Y < 0) return;
-            if (dgvData.CurrentRow.Index == dgvData.Rows.Count - 1) return;
+            if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
 
             if (MessageBox.Show("Xác nhận xóa?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No) return;
 
@@ -148,12 +146,7 @@ namespace QLThueNha.DanhMuc
         private void dgvData_CurrentCellChanged(object sender, EventArgs e)
         {
             try {
-                if (dgvData.Rows.Count < 2 || dgvData.CurrentCellAddress.Y < 0) return;
-                if (dgvData.CurrentRow.Index == dgvData.Rows.Count - 1)
-                { 
-                    ClearText();
-                    return;
-                }
+                if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
 
                 int i = dgvData.CurrentRow.Index;
 
@@ -176,9 +169,13 @@ namespace QLThueNha.DanhMuc
             txtSDT.Text = "";
             txtFAX.Text = "";
             txtDiaChi.Text = "";
-            txtKhuVuc.Text = "";
-           
+            txtKhuVuc.Text = "";         
         }
-            
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            txtMa.Focus();
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
@@ -54,7 +55,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 56);
+            this.label1.Size = new System.Drawing.Size(413, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOẠI NHÀ CHO THUÊ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,6 +65,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnInsert);
             this.groupBox1.Controls.Add(this.txtTen);
             this.groupBox1.Controls.Add(this.txtMa);
@@ -72,48 +74,48 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(349, 116);
+            this.groupBox1.Size = new System.Drawing.Size(413, 110);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(254, 84);
+            this.button4.Location = new System.Drawing.Point(329, 71);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
+            this.button4.TabIndex = 5;
             this.button4.Text = "Thoát";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(173, 84);
+            this.btnDelete.Location = new System.Drawing.Point(248, 71);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(92, 84);
+            this.btnUpdate.Location = new System.Drawing.Point(167, 71);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(11, 84);
+            this.btnInsert.Location = new System.Drawing.Point(86, 71);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);
             this.btnInsert.TabIndex = 2;
-            this.btnInsert.Text = "Thêm";
+            this.btnInsert.Text = "Lưu";
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
@@ -129,7 +131,7 @@
             this.txtMa.Location = new System.Drawing.Point(62, 19);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(267, 20);
-            this.txtMa.TabIndex = 1;
+            this.txtMa.TabIndex = 0;
             // 
             // label3
             // 
@@ -153,15 +155,16 @@
             // 
             this.groupBox2.Controls.Add(this.dgvData);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 172);
+            this.groupBox2.Location = new System.Drawing.Point(0, 166);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(349, 278);
+            this.groupBox2.Size = new System.Drawing.Size(413, 284);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
             // 
             // dgvData
             // 
+            this.dgvData.AllowUserToAddRows = false;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
@@ -172,7 +175,7 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(343, 259);
+            this.dgvData.Size = new System.Drawing.Size(407, 265);
             this.dgvData.TabIndex = 0;
             // 
             // ColID
@@ -180,6 +183,7 @@
             this.ColID.DataPropertyName = "ID";
             this.ColID.HeaderText = "ID";
             this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
             this.ColID.Visible = false;
             // 
             // ColMa
@@ -187,19 +191,31 @@
             this.ColMa.DataPropertyName = "Ma";
             this.ColMa.HeaderText = "Mã";
             this.ColMa.Name = "ColMa";
+            this.ColMa.ReadOnly = true;
             // 
             // ColTen
             // 
             this.ColTen.DataPropertyName = "Ten";
             this.ColTen.HeaderText = "Tên";
             this.ColTen.Name = "ColTen";
+            this.ColTen.ReadOnly = true;
             this.ColTen.Width = 399;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LoaiNha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 450);
+            this.ClientSize = new System.Drawing.Size(413, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -233,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTen;
+        private System.Windows.Forms.Button button1;
     }
 }
