@@ -1,4 +1,4 @@
-Create proc [dbo].[sp_InsertUpdate_XemNha]
+Alter proc [dbo].[sp_InsertUpdate_XemNha]
 @ID int,
 @idKhachHang int,
 @idNhanVien int,
@@ -13,23 +13,28 @@ begin tran
 
 	if (isnull((select IDChuNha from NhaChoThue where ID = @idNhaXem), 0) = @idKhachHang)
 	begin
-		return -2; -- khach hang trung chu nha
+		
+		set @result = -2; -- khach hang trung chu nha
 	end
-
-	if @ID < 1 --insert
+	else
+	begin
+		if @ID < 1 --insert
 	begin
 		insert into XemNha(IDKH, IDNV, ThoiGianXem, IDNhaThue, NhanSet)
 		values(@idKhachHang, @idNhanVien, @thoiGian, @idNhaXem, @nhanXet)
 
 		set @result =(select @@identity)
-	end
-	else -- update
-	begin
-		update XemNha set IDKH = @idKhachHang, IDNV = @idNhanVien, ThoiGianXem = @thoiGian, IDNhaThue = @idNhaXem, NhanSet = @nhanXet
-		where ID = @ID
+		end
+		else -- update
+		begin
+			update XemNha set IDKH = @idKhachHang, IDNV = @idNhanVien, ThoiGianXem = @thoiGian, IDNhaThue = @idNhaXem, NhanSet = @nhanXet
+			where ID = @ID
 
-		set @result = @ID
+			set @result = @ID
+		end
 	end
+
+	
 
 	end try	
 	begin catch
