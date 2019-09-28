@@ -30,8 +30,15 @@ namespace QLThueNha.HeThong
 
             try {
                 DataTable tb;
-                tb = dp.Fillbang("select ID, Ma, Ten, IDChiNhanh, IDChucVu from NhanVien where Username = N'" + txtUsername.Text.Trim() + "' and Pass = N'" + txtPassword.Text.Trim() + "'");
 
+                if (rbtnNhanVien.Checked)
+                {
+                    tb = dp.Fillbang("select ID, Ma, Ten, IDChiNhanh, IDChucVu from NhanVien where Username = N'" + txtUsername.Text.Trim() + "' and Pass = N'" + txtPassword.Text.Trim() + "'");
+                }
+                else {
+                    tb = dp.Fillbang(" select ID, Ma, Ten, IDChiNhanh, 3 as IDChucVu from KhachHang where Username = N'" + txtUsername.Text.Trim() + "' and Pass = N'" + txtPassword.Text.Trim() + "'");
+                }
+                
                 int idUser = Convert.ToInt16(tb.Rows[0]["ID"].ToString());
                 int idChiNhanh = Convert.ToInt16(tb.Rows[0]["IDChiNhanh"].ToString());
                 int idChucVu = Convert.ToInt16(tb.Rows[0]["IDChucVu"].ToString());

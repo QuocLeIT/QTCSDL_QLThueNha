@@ -35,11 +35,13 @@
             this.txtPassOld = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbtnNhanVien = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(235, 132);
+            this.button2.Location = new System.Drawing.Point(180, 147);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -49,7 +51,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(116, 132);
+            this.button1.Location = new System.Drawing.Point(99, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -102,11 +104,36 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Mật khẩu cũ";
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(190, 119);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(83, 17);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Khách hàng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // rbtnNhanVien
+            // 
+            this.rbtnNhanVien.AutoSize = true;
+            this.rbtnNhanVien.Checked = true;
+            this.rbtnNhanVien.Location = new System.Drawing.Point(99, 119);
+            this.rbtnNhanVien.Name = "rbtnNhanVien";
+            this.rbtnNhanVien.Size = new System.Drawing.Size(74, 17);
+            this.rbtnNhanVien.TabIndex = 7;
+            this.rbtnNhanVien.TabStop = true;
+            this.rbtnNhanVien.Text = "Nhân viên";
+            this.rbtnNhanVien.UseVisualStyleBackColor = true;
+            // 
             // FrmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 165);
+            this.ClientSize = new System.Drawing.Size(368, 182);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rbtnNhanVien);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassNew);
@@ -133,5 +160,7 @@
         private System.Windows.Forms.TextBox txtPassOld;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbtnNhanVien;
     }
 }

@@ -35,14 +35,29 @@ namespace QLThueNha.HeThong
 
             try {
                 DataTable tb;
-                tb = dp.Fillbang("select ID from NhanVien where ID = "+ DataAccount._idUser +" and Pass = N'" + txtPassOld.Text.Trim() + "'");
+
+                if (rbtnNhanVien.Checked)
+                {
+                    tb = dp.Fillbang("select ID from NhanVien where ID = " + DataAccount._idUser + " and Pass = N'" + txtPassOld.Text.Trim() + "'");
+                }
+                else {
+                    tb = dp.Fillbang("select ID from KhachHang where ID = " + DataAccount._idUser + " and Pass = N'" + txtPassOld.Text.Trim() + "'");
+                }
 
                 if (tb.Rows.Count < 1) {
                     MessageBox.Show("Mật khẩu cũ không đúng!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                dp.MyExecuteNonQuery("update NhanVien set Pass = N'"+ txtPassNew.Text.Trim() +"' where ID = " + DataAccount._idUser);
+                if (rbtnNhanVien.Checked)
+                {
+                    dp.MyExecuteNonQuery("update NhanVien set Pass = N'" + txtPassNew.Text.Trim() + "' where ID = " + DataAccount._idUser);
+                }
+                else
+                {
+                    dp.MyExecuteNonQuery("update KhachHang set Pass = N'" + txtPassNew.Text.Trim() + "' where ID = " + DataAccount._idUser);
+                }
+
                 DataAccount.ResetDataAccount();
                 MessageBox.Show("Thành công, vui lòng đăng nhập lại...", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();

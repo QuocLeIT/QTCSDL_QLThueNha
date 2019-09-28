@@ -35,6 +35,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.rbtnNhanVien = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(73, 96);
+            this.button1.Location = new System.Drawing.Point(74, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -83,7 +85,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(154, 96);
+            this.button2.Location = new System.Drawing.Point(155, 121);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -102,11 +104,36 @@
             this.label3.Text = "Login";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // rbtnNhanVien
+            // 
+            this.rbtnNhanVien.AutoSize = true;
+            this.rbtnNhanVien.Checked = true;
+            this.rbtnNhanVien.Location = new System.Drawing.Point(74, 98);
+            this.rbtnNhanVien.Name = "rbtnNhanVien";
+            this.rbtnNhanVien.Size = new System.Drawing.Size(74, 17);
+            this.rbtnNhanVien.TabIndex = 4;
+            this.rbtnNhanVien.TabStop = true;
+            this.rbtnNhanVien.Text = "Nhân viên";
+            this.rbtnNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(165, 98);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(83, 17);
+            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Khách hàng";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 126);
+            this.ClientSize = new System.Drawing.Size(334, 156);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rbtnNhanVien);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassword);
@@ -134,5 +161,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton rbtnNhanVien;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

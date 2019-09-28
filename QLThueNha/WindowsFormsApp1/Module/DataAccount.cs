@@ -13,7 +13,7 @@ namespace QLThueNha.Module
         public static string _ma = "";
         public static string _name = "";
         public static int _idChiNhanh = -1;
-        public static int _idChucVu = -1;
+        public static int _idChucVu = -1;//1: admim, 2: nhanvien, 3: khach hang
 
        
 
