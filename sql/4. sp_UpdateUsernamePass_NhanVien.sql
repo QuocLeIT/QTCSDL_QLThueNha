@@ -14,7 +14,6 @@ begin tran
 	end
 		
 		update NhanVien set Username = @Username, Pass = @Password where ID = @ID
-
 		set @result =@ID
 
 	end try	

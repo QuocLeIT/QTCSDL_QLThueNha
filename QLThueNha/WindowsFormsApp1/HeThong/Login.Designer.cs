@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rbtnNhanVien = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.chkFix = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -127,11 +128,23 @@
             this.radioButton2.Text = "Khách hàng";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // chkFix
+            // 
+            this.chkFix.AutoSize = true;
+            this.chkFix.Location = new System.Drawing.Point(5, 12);
+            this.chkFix.Name = "chkFix";
+            this.chkFix.Size = new System.Drawing.Size(39, 17);
+            this.chkFix.TabIndex = 5;
+            this.chkFix.Text = "Fix";
+            this.chkFix.UseVisualStyleBackColor = true;
+            this.chkFix.CheckedChanged += new System.EventHandler(this.chkFix_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 156);
+            this.Controls.Add(this.chkFix);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.rbtnNhanVien);
             this.Controls.Add(this.button2);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton rbtnNhanVien;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.CheckBox chkFix;
     }
 }

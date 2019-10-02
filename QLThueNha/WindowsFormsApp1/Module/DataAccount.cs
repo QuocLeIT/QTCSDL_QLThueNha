@@ -8,6 +8,7 @@ namespace QLThueNha.Module
 {
     public static class DataAccount
     {
+        public static bool _fix = false;
         public static int _idUser = -1;
         public static string _username = "";
         public static string _ma = "";
