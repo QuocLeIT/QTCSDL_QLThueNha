@@ -1,4 +1,4 @@
-Create proc [dbo].[sp_UpdateUsernamePass_NhanVien]
+Alter proc [dbo].[sp_UpdateUsernamePass_NhanVien]
 @ID int,
 @Username nvarchar(50),
 @Password nvarchar(50)
@@ -10,12 +10,11 @@ begin tran
 
 	if Exists(select ID from NhanVien where Username = @Username and ID <> @ID)
 	begin
+		ROLLBACK TRAN
 		return -3;
-	end
-		
+	end	
 		update NhanVien set Username = @Username, Pass = @Password where ID = @ID
 		set @result =@ID
-
 	end try	
 	begin catch
 		set @result =-1--(SELECT ERROR_NUMBER() AS ErrorNumber)
