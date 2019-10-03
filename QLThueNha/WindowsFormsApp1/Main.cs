@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLThueNha.DanhMuc;
 using QLThueNha.HeThong;
+using QLThueNha.BaoCao;
 using QLThueNha.Module;
 
 namespace WindowsFormsApp1
@@ -109,6 +110,8 @@ namespace WindowsFormsApp1
             mnuDX.Enabled = isLock;
             mnuDoiMatKhau.Enabled = isLock;
 
+            mnuLicXemNha.Enabled = isLock;
+
             mnuDN.Enabled = !isLock;
         }
 
@@ -128,6 +131,7 @@ namespace WindowsFormsApp1
             if (DataAccount._idChucVu == 1 || DataAccount._idChucVu == 2)
             {
                 mnuKhachHang.Enabled = isLogin;
+                mnuLicXemNha.Enabled = isLogin;
             }
                 
             //khachhang
@@ -155,6 +159,13 @@ namespace WindowsFormsApp1
         private void mnuThoat_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void mnuLicXemNha_Click(object sender, EventArgs e)
+        {
+
+            FrmBaoCaoXemNha frm = new FrmBaoCaoXemNha();
+            frm.ShowDialog();
         }
     }
 }
