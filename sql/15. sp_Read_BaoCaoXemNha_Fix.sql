@@ -12,6 +12,12 @@ BEGIN TRAN
 			ROLLBACK TRAN
 			RETURN
 		END
+		IF NOT EXISTS(SELECT ID FROM XemNha WHERE CONVERT(date, ThoiGianXem)  >= @tuNgay and CONVERT(date, ThoiGianXem)  <= @denNgay)
+		BEGIN
+			PRINT N'Khong co du lieu'
+			ROLLBACK TRAN
+			RETURN
+		END
 
 		--TEST
 		WAITFOR DELAY '0:00:05'
