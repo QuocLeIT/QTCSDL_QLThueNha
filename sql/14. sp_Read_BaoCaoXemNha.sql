@@ -21,8 +21,6 @@ BEGIN TRAN
 			RETURN
 		END
 
-		select * from XemNha
-
 		--TEST
 		WAITFOR DELAY '0:00:05'
 		---------
