@@ -33,10 +33,17 @@ namespace Provider
         }
 
         public string GetConnectionString()
-        {            
-            return "server=" + ServerName + ";database='" + DatabaseName + "';Uid='" + UserName + "';pwd='" + UserPass + "';";        
+        {
+            return "server=" + ServerName + ";database='" + DatabaseName + "';Uid='" + UserName + "';pwd='" + UserPass + "';";
+
+            //Connection string using windows authentication
+            //StringBuilder connectionString = new StringBuilder();
+            //connectionString.Append("server=").Append(ServerName).Append(";");
+            //connectionString.Append("database='").Append(DatabaseName).Append("';");
+            //connectionString.Append("Integrated Security=True;");
+            //return connectionString.ToString();
         }
-                   
+
         private void OpenConnect()
         {           
             if (Cnn == null)
